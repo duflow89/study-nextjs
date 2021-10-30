@@ -5,7 +5,7 @@ import Layout from '../../../components/layout';
 const FirstPost = () => {
   return (
     <Layout>
-      <Image src='/images/profile.jpg' width={200} height={200} alt='profile' />
+      <Image src='/images/profile.png' width={200} height={200} alt='profile' />
       <h1>First Post!</h1>
       <h2>
         <Link href='/'>
