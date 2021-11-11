@@ -37,28 +37,20 @@ export function getSortedPostsData() {
 }
 
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory);
+  // Instead of the file system,
+  // fetch post data from an external API endpoint
+  const res = await fetch('..');
+  const posts = await res.json();
+  return posts.map((post) => ({ params: { id: post.id } }));
 
-  // Returns an array that looks like this:
-  // [
-  //   {
+  // const fileNames = fs.readdirSync(postsDirectory);
+  // return fileNames.map((fileName) => {
+  //   return {
   //     params: {
-  //       id: 'ssg-ssr'
-  //     }
-  //   },
-  //   {
-  //     params: {
-  //       id: 'pre-rendering'
-  //     }
-  //   }
-  // ]
-  return fileNames.map((fileName) => {
-    return {
-      params: {
-        id: fileName.replace(/\.md$/, ''),
-      },
-    };
-  });
+  //       id: fileName.replace(/\.md$/, ''),
+  //     },
+  //   };
+  // });
 }
 
 export function getPostData(id) {
