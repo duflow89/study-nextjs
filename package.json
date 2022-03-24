@@ -1,0 +1,28 @@
+{
+  "name": "study-nextjs",
+  "packageManager": "yarn@3.2.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "husky install"
+  },
+  "workspaces": {
+    "packages": [
+      "core",
+      "ui"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lerna": "^4.0.0"
+  },
+  "engines": {
+    "node": "<16.10"
+  },
+  "volta": {
+    "node": "16.14.2",
+    "yarn": "1.22.18"
+  },
+  "dependencies": {
+    "lint-staged": "^12.3.7"
+  }
+}
